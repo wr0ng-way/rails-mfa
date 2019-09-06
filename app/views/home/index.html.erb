@@ -1,0 +1,15 @@
+<div class="masthead container-fuild h-100 d-flex justify-content-center">
+  <div class="row">
+    <div class="col-md-12 d-flex justify-content-center align-items-center flex-column">
+      <h1>Welcome to Multi Factor Authentication Demo</h1>
+      <h3 class="text-center">Please enable/disable from below button</h3>
+
+      <%= link_to "#{current_user.otp_required_for_login ? 'Disable' : 'Enable'} MFA", user_enable_disable_mfa_path, remote: true, class: "btn btn-primary btn-enable-disable-mfa" %>
+      <div class="mt-4 mfa-qr-code">
+        <%if current_user.otp_required_for_login %>
+          <%=current_user.otp_qr_code.html_safe%>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>

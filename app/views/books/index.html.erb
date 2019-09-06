@@ -1,0 +1,20 @@
+<div class="container mt-5 pt-5">
+  <div class="row">
+    <div class="col-12">
+      <div class="card-columns">
+        <%@books.each do |book|%>
+          <div class="card">
+            <img class="card-img" src="https://source.unsplash.com/random/350x200" alt="Card image">
+            <div class="card-body">
+              <h5 class="card-title"><%=book.name%></h5>
+              <p class="card-text"><strong>Price:</strong><%=book.price%></p>
+              <p class="card-text"><strong>Author:</strong><%=book.author%></p>
+              <p class="card-text"><strong>Publisher:</strong><%=book.publisher%></p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>

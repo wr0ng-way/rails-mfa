@@ -1,0 +1,7 @@
+<%if current_user.otp_required_for_login%>
+  $(".btn-enable-disable-mfa").html("Disable MFA")
+  $(".mfa-qr-code").html("<%=escape_javascript(current_user.otp_qr_code.html_safe)%>")
+<%else%>
+  $(".btn-enable-disable-mfa").html("Enable MFA")
+  $(".mfa-qr-code").empty();
+<%end%>
